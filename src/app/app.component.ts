@@ -8,9 +8,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    imports: [
+  selector: 'app-root',
+  standalone: true,
+  imports: [
     CommonModule,
     RouterOutlet,
     RouterLink,
@@ -20,10 +20,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatButtonModule,
     MatSidenavModule
     ],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css'
-  })
-  
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
 export class AppComponent {
   title = 'Coup De Bot';
 }
