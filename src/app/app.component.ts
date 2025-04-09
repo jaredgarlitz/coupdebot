@@ -1,13 +1,29 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './header/header.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
-})
+    selector: 'app-root',
+    standalone: true,
+    imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    LoginComponent,
+    HeaderComponent,
+    MatButtonModule,
+    MatSidenavModule
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
+  })
+  
 export class AppComponent {
-  title = 'headshotangularbuild';
+  title = 'Coup De Bot';
 }

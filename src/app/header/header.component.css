@@ -1,0 +1,11 @@
+mat-toolbar#example-toolbar.mat-toolbar.mat-toolbar-single-row {
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+div.toolbar-div {
+  display: flex;
+  justify-content: space-between;
+}

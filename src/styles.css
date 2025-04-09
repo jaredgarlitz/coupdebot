@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+/* @import '@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+
+html, body { height: 100%; }
+body { 
+  color: white;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #353434;
+  div {
+    padding: 5px 10px;
+  }
+}
+
+a {
+  &.twitch{
+    background-color: blueviolet;
+  }
+}
+
+button {
+  &.default {
+    background-color: lightgreen;
+  }
+
+  padding: 5px;
+  border-radius: 7px;
+  border: 1px solid;
+}
+
+input {
+  padding: 5px 5px;
+  border-radius: 8px;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .spacer {
+  flex: 1;
+} */

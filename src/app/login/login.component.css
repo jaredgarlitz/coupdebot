@@ -1,0 +1,22 @@
+div.login-container {
+  display: flex;
+  justify-content: center;
+}
+
+div.login-left {
+  justify-content: center;
+  color: white;
+  display: flex;
+  padding: 10%
+}
+
+form {
+  display: flex;
+  justify-content: space-around;
+  
+  &:div.form-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
