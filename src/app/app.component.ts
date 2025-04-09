@@ -13,9 +13,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   imports: [
     CommonModule,
     RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
-    LoginComponent,
     HeaderComponent,
     MatButtonModule,
     MatSidenavModule
