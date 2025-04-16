@@ -4,20 +4,21 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from "rxjs";
 
 import { Login } from "../../../login/login";
+import { environment } from "../../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class LoginApiService {
-  private path = 'http://localhost:3500/api';
+  private path = environment.apiUrl;
 
   constructor(
     private http: HttpClient,
   ) { }
 
   public login(email: string | null, password: string | null): Observable<Login> {
-    let response = this.http.post<Login>(`${this.path}/auth`, {email: email, password: password});
+    let response = this.http.post<Login>(`${this.path}auth`, {email: email, password: password});
     return response;
   }
 

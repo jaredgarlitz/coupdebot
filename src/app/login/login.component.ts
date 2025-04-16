@@ -40,7 +40,7 @@ export class LoginComponent{
 
 
   ngOnInit() {
-    this.authService.verifyAuth()?.pipe(tap(
+    this.authService.verifyUser()?.pipe(tap(
       x => {
         if (x._id) {
           this.router.navigate(['']);

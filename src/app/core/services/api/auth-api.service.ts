@@ -3,6 +3,7 @@ import { concat, Observable, tap, defer, ReplaySubject, shareReplay, BehaviorSub
 import { HttpClient } from '@angular/common/http';
 import { User } from '../service';
 import { Router } from '@angular/router';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({providedIn: 'root'})
 
@@ -14,15 +15,15 @@ export class AuthenticationService {
 
   }
 
-  apiUrl = 'http://localhost:3500/api/';
+  apiUrl = environment.apiUrl;
 
   public isAuthenticated() {
-    if (this.verifyAuth()?.subscribe() == null) {
+    if (this.verifyUser()?.subscribe() == null) {
       this.router.navigate(['/login']);
     }
   }
 
-  public verifyAuth(): Observable<User> {
+  public verifyUser(): Observable<User> {
       return this.http.get<User>(`${this.apiUrl}auth/${this.getAuthCookie()}`);
   }
 
@@ -44,7 +45,7 @@ export const isAuthenticated = () => {
 
   if (getAuthCookie()) {
     let http = inject(HttpClient);
-    let userData = http.get<User>(`http://localhost:3500/api/auth/${getAuthCookie()}`).pipe(tap(
+    let userData = http.get<User>(`${environment.apiUrl}auth/${getAuthCookie()}`).pipe(tap(
       x => {
         if(!x._id) {
           router.navigate(['login']);

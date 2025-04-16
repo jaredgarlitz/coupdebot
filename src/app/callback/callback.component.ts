@@ -25,17 +25,10 @@ export class CallbackComponent implements OnInit {
   ) {
   }
 
-  currentUser = signal({} as User);
-  curentUser!: User;
   code!: string | null;
   scope!: string | null;
   accessToken!: string | null;
   refreshToken!: string | null;
-
-  // currentUserInfo$ = this.authService.verifyAuth()?.subscribe(res => {
-  //   this.currentUser.set(res);
-  //   return res;
-  // });
 
   ngOnInit(): void {
     this.route.queryParamMap.pipe(
@@ -48,14 +41,11 @@ export class CallbackComponent implements OnInit {
       switchMap(tokenResponse => {
         this.accessToken = tokenResponse.access_token;
         this.refreshToken = tokenResponse.refresh_token;
-        return this.authService.verifyAuth();
+        return this.authService.verifyUser();
       })
     ).subscribe((data: User) => {
         this.twitchService.saveUserData(this.accessToken, this.refreshToken, data._id).subscribe();
     });
   }
 
-  ngOnDestroy() {
-    // this.currentUserInfo$?.unsubscribe();
-  }
 }

@@ -4,5 +4,6 @@ export interface User {
   firstName: string,
   lastName: string,
   dateCreated: Date,
-  userName: string
+  userName: string,
+  twitchUsername: string
 }

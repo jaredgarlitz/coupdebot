@@ -1,0 +1,31 @@
+<form class="example-form">
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Command Title</mat-label>
+      <input matInput [value]="command.commandName">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Usage</mat-label>
+      <input matInput [value]="command.commandString">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Response</mat-label>
+      <input matInput [value]="command.commandResponse">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <input matInput [value]="command.commandDescription">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-slide-toggle labelPosition="before" [checked]="command.activated">Active: </mat-slide-toggle>
+  </div>
+  <button mat-button class="default" (click)="onCloseClick()">Close</button>
+  <button mat-button class="default" (click)="onSaveClick()">submit</button>
+</form>

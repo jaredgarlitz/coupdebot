@@ -7,6 +7,7 @@ import { LiveNotificationComponent } from './live-notifications/live-notificatio
 import { AuthenticationService, isAuthenticated } from './core/services/api/auth-api.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CallbackComponent } from './callback/callback.component';
+import { TwitchConnectComponent } from './twitch-connect/twitch-connect.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,6 +15,10 @@ export const routes: Routes = [
   { path: 'callback', component: CallbackComponent},
   { 
     path: 'commands', component: CommandsComponent,
+    canActivate: [isAuthenticated]
+  },
+  {
+    path: 'connect-twitch', component: TwitchConnectComponent,
     canActivate: [isAuthenticated]
   },
   {
