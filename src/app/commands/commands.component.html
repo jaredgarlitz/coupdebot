@@ -26,6 +26,7 @@
         <button
         mat-icon-button
         aria-label="delete command"
+        (click)="deleteCommand(element)"
         class="example-toggle-button">
         <mat-icon>delete</mat-icon>
       </button>
@@ -72,4 +73,7 @@
     <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
   </table>
   <mat-paginator [length]="totalItems()" [pageSize]="25" aria-label="Select page of commands"></mat-paginator>
+</div>
+<div class="new-button-div">
+  <button mat-fab class="default" (click)="createCommand()"><mat-icon>add</mat-icon></button>
 </div>

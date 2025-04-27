@@ -76,3 +76,8 @@ tr.example-element-row:not(.example-expanded-row):active {
 .action-buttons {
   width: 48px;
 }
+
+.new-button-div {
+  display: flex;
+  justify-content: end;
+}

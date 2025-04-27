@@ -1,31 +1,31 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="commandFormGroup">
   <div>
     <mat-form-field class="example-full-width">
       <mat-label>Command Title</mat-label>
-      <input matInput [value]="command.commandName">
+      <input matInput formControlName="command_name">
     </mat-form-field>
   </div>
   <div>
     <mat-form-field class="example-full-width">
       <mat-label>Usage</mat-label>
-      <input matInput [value]="command.commandString">
+      <input matInput formControlName="command_string">
     </mat-form-field>
   </div>
   <div>
     <mat-form-field class="example-full-width">
       <mat-label>Response</mat-label>
-      <input matInput [value]="command.commandResponse">
+      <input matInput formControlName="command_response">
     </mat-form-field>
   </div>
   <div>
     <mat-form-field class="example-full-width">
       <mat-label>Description</mat-label>
-      <input matInput [value]="command.commandDescription">
+      <input matInput formControlName="command_description">
     </mat-form-field>
   </div>
   <div>
-    <mat-slide-toggle labelPosition="before" [checked]="command.activated">Active: </mat-slide-toggle>
+    <mat-slide-toggle labelPosition="before" formControlName="active">Active: </mat-slide-toggle>
   </div>
-  <button mat-button class="default" (click)="onCloseClick()">Close</button>
-  <button mat-button class="default" (click)="onSaveClick()">submit</button>
+  <button mat-button class="cancel" (click)="onCloseClick()">Close</button>
+  <button mat-button class="default" (click)="onSaveClick()">Submit</button>
 </form>

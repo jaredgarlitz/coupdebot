@@ -7,5 +7,6 @@ export interface command {
   twitchUsageLevel: string,
   activated: boolean,
   cooldownTimer: number,
-  twitchChannel: string
+  twitchChannel: string,
+  commandType: string
 }

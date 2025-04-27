@@ -13,6 +13,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { CommandsDialogComponent } from "./commands-dalog/commands-dialog.component";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { DeleteCommandsDialogComponent } from "./delete-command-dialog/delete-command-dialog.component";
 
 
 @Component({
@@ -23,14 +24,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   styleUrl: './commands.component.css'
 })
 
-// export class dialog {
-//   readonly dialog = inject(MatDialog);
-
-//   openDialog(): void {
-//     const dialogRef = '';
-//     console.log(dialogRef);
-//   }
-// }
 
 export class CommandsComponent implements AfterViewInit{
 
@@ -86,8 +79,20 @@ export class CommandsComponent implements AfterViewInit{
     this.expandedElement = this.isExpanded(command) ? null : command;
   }
 
+  createCommand() {
+    let dialogRef = this.matDialog.open<CommandsDialogComponent, {}, command>(CommandsDialogComponent, {data: {}})
+  }
+
   editCommand(row: command){
-    let dialogRef = this.matDialog.open<CommandsDialogComponent, {command: command}, command>(CommandsDialogComponent, { data: { command: row}, disableClose: true});
+    let dialogRef = this.matDialog.open<CommandsDialogComponent, {command: command}, command>(CommandsDialogComponent, { data: { command: row} });
+
+    dialogRef.afterClosed().subscribe((closeResponse) => {
+      return;
+    })
+  }
+
+  deleteCommand(row: command){
+    let dialogRef = this.matDialog.open<DeleteCommandsDialogComponent, {command: command}, command>(DeleteCommandsDialogComponent, { data: { command: row} });
 
     dialogRef.afterClosed().subscribe((closeResponse) => {
       return;
