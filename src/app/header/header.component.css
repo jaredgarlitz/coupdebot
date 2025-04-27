@@ -2,10 +2,15 @@ mat-toolbar#example-toolbar.mat-toolbar.mat-toolbar-single-row {
   background-color: green;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 
-div.toolbar-div {
+div.toolbar-contents {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+}
+
+.sidenav-container {
+  height: 100px;
 }
