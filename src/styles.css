@@ -13,7 +13,15 @@ body {
 
 a {
   &.twitch{
-    background-color: blueviolet;
+    background-color: #8956FB;
+  }
+
+  &.discord{
+    background-color: #5865f2;
+  }
+
+  &.spotify{
+    background-color: #1db954;
   }
 }
 

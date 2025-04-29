@@ -8,11 +8,17 @@ import { AuthenticationService, isAuthenticated } from './core/services/api/auth
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CallbackComponent } from './callback/callback.component';
 import { TwitchConnectComponent } from './twitch-connect/twitch-connect.component';
+import { SpotifyCallbackComponent } from './callback/spotify/spotify-callback.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: SignUpComponent },
-  { path: 'callback', component: CallbackComponent},
+  { path: 'callback', component: CallbackComponent,
+    canActivate: [isAuthenticated]
+  },
+  { path: 'spotify-callback', component: SpotifyCallbackComponent,
+    canActivate: [isAuthenticated]
+  },
   { 
     path: 'commands', component: CommandsComponent,
     canActivate: [isAuthenticated]

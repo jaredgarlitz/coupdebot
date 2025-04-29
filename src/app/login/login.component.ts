@@ -40,13 +40,15 @@ export class LoginComponent{
 
 
   ngOnInit() {
-    this.authService.verifyUser()?.pipe(tap(
-      x => {
-        if (x._id) {
-          this.router.navigate(['']);
+    if (this.authService.getAuthCookie() !== null) {
+      this.authService.verifyUser()?.pipe(tap(
+        x => {
+          if (x._id) {
+            this.router.navigate(['']);
+          }
         }
-      }
-    )).subscribe();
+      )).subscribe();
+    }
   }
 
   onSubmit() {

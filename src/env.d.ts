@@ -5,6 +5,8 @@ declare interface Env {
   readonly NG_APP_TWITCH_CLIENT_SECRET: string;
   readonly NG_APP_API_URL: string;
   readonly NG_APP_APP_URL: string;
+  readonly NG_APP_SPOTIFY_CLIENT_ID: string;
+  readonly NG_APP_SPOTIFY_CLIENT_SECRET: string;
   // Replace the following with your own environment variables.
   // Example: NGX_VERSION: string;
   [key: string]: any;

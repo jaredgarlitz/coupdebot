@@ -8,6 +8,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
+import { tap } from "rxjs";
 
 
 
@@ -49,7 +50,13 @@ export class HeaderComponent{
     this._mobileQuery.addEventListener('change', this._mobileQueryListener);
   }
 
-  public ngOnInit() {}
+  isLoggedIn = false;
+
+  public ngOnInit() {
+    if (this.authService.getAuthCookie() !== null) {
+      this.isLoggedIn = true;
+    }
+  }
 
   ngOnDestroy(): void {
     this._mobileQuery.removeEventListener('change', this._mobileQueryListener);

@@ -13,3 +13,7 @@ export interface TwitchUser {
   refreshToken: string;
   botEnabled: boolean;
 }
+
+export interface SpotifyUser {
+  
+}
