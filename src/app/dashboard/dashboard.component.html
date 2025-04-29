@@ -2,3 +2,20 @@
   <p>This will be the dashboard</p>
 </div>
 
+@if (twitchConnected) { 
+<div>
+  <a mat-button [href]=twitchUrl class="twitch" target="_blank">Connect to Twitch</a>
+</div>
+}
+
+@if (discordConnected) {
+<div>
+  <a mat-button [href]=discordUrl class="discord" target="_blank">Connect to Discord</a>
+</div>
+}
+
+@if (spotifyConnected) {
+<div>
+  <a mat-button [href]=spotifyUrl class="spotify" target="_blank">Connect to Spotify</a>
+</div>
+}

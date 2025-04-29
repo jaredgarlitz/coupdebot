@@ -5,5 +5,6 @@ export interface User {
   lastName: string,
   dateCreated: Date,
   userName: string,
-  twitchUsername: string
+  twitchUsername: string,
+  spotifyUsername: string
 }
