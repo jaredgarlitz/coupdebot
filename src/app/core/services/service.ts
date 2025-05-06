@@ -6,5 +6,6 @@ export interface User {
   dateCreated: Date,
   userName: string,
   twitchUsername: string,
-  spotifyUsername: string
+  spotifyUsername: string,
+  discordUsername: string
 }

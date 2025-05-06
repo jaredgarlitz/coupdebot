@@ -32,8 +32,7 @@ export class CommandsComponent implements AfterViewInit{
     private commandservice: CommandApiService,
     private matDialog: MatDialog
   ){}
-  listItems = ['A', 'B', 'C', 'D'];
-
+  
   isLoadingResults = signal(true);
   dataError = signal(false);
   totalItems = signal(0);
