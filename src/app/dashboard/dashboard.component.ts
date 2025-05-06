@@ -21,7 +21,7 @@ export class DashboardComponent implements AfterViewInit{
   discordConnected = signal(true);
   spotifyConnected = signal(true);
 
-  twitchUrl = `https://id.twitch.tv/oauth2/authorize?client_id=${environment.twitchClientId}&redirect_uri=${environment.appUrl}callback&response_type=code&scope=channel%3Abot+chat%3Aedit`;
+  twitchUrl = `https://id.twitch.tv/oauth2/authorize?client_id=${environment.twitchClientId}&redirect_uri=${environment.appUrl}callback&response_type=code&scope=channel%3Abot+chat%3Aedit+chat%3Aread`;
   twitchScopes = [
     'channel:bot'
   ];
