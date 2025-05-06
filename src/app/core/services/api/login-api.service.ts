@@ -27,7 +27,7 @@ export class LoginApiService {
   }
 
   public registerUser(email: string | null, password: string | null, firstName: string | null, lastName: string | null, userName: string | null): Observable<Login> {
-    let response = this.http.post<Login>(`${this.path}/users`, {email: email, password: password, firstName: firstName, lastName: lastName, userName: userName});
+    let response = this.http.post<Login>(`${this.path}users`, {email: email, password: password, firstName: firstName, lastName: lastName, userName: userName});
     return response;
   }
 }
