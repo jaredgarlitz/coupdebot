@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CallbackComponent } from './callback/callback.component';
 import { TwitchConnectComponent } from './twitch-connect/twitch-connect.component';
 import { SpotifyCallbackComponent } from './callback/spotify/spotify-callback.component';
+import { DiscordCallbackComponent } from './callback/discord/discord-callback.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,6 +18,10 @@ export const routes: Routes = [
     canActivate: [isAuthenticated]
   },
   { path: 'spotify-callback', component: SpotifyCallbackComponent,
+    canActivate: [isAuthenticated]
+  },
+  {
+    path: 'discord-callback', component: DiscordCallbackComponent,
     canActivate: [isAuthenticated]
   },
   { 

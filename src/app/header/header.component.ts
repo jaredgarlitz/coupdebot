@@ -50,12 +50,16 @@ export class HeaderComponent{
     this._mobileQuery.addEventListener('change', this._mobileQueryListener);
   }
 
-  isLoggedIn = false;
+  isLoggedIn = signal(false);
+  userFirstName = signal('');
 
   public ngOnInit() {
-    if (this.authService.getAuthCookie() !== null) {
-      this.isLoggedIn = true;
-    }
+    this.authService.verifyUser().pipe(tap(x => {
+      if (x._id) {
+        this.isLoggedIn.set(true);
+        this.userFirstName.set(x.firstName);
+      }
+    })).subscribe();
   }
 
   ngOnDestroy(): void {

@@ -1,20 +1,23 @@
-<mat-drawer-container hasBackdrop="true" class="sidenav-container">
-  <mat-toolbar id="example-toolbar" [class.example-is-mobile]="isMobile()" container-background-color="green">
-    <div class="toolbar-contents">
-      <button mat-icon-button class="example-icon" (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
-      <button mat-button id="home-button" (click)="navigate('')">Coup De Bot</button>
-     </div>
-     @if (this.isLoggedIn) {
-     <div class="toolbar-contents">
-      <button mat-icon-button class="logout" (click)="logout()">
-        <mat-icon>logout</mat-icon>
-      </button>
-     </div>
-    }
-  </mat-toolbar>
+@if (this.isLoggedIn() == true) {
+  <mat-drawer-container hasBackdrop="true" class="sidenav-container">
+    <mat-toolbar id="example-toolbar" [class.example-is-mobile]="isMobile()" container-background-color="green">
+      <div class="toolbar-contents">
+        <button mat-icon-button class="example-icon" (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+        <button mat-button id="home-button" (click)="navigate('')">Coup De Bot</button>
+      </div>
+      <div class="toolbar-contents">
+        <span>
+          Hello {{this.userFirstName()}}
+          <button mat-icon-button class="logout" (click)="logout()">
+            <mat-icon>logout</mat-icon>
+          </button>
+        </span>
+      </div>
+    </mat-toolbar>
 
-  <mat-drawer #drawer mode="over">
-    <button mat-button class="example-icon" aria-label="Example Icon" (click)="navigate('commands')">Commands</button>
-    <button mat-button class="example-icon" aria-label="Example Icon" (click)="navigate('live-notifications')">Notifications</button>
-  </mat-drawer>
-</mat-drawer-container>
+    <mat-drawer #drawer mode="over">
+      <button mat-button class="example-icon" aria-label="Example Icon" (click)="navigate('commands')">Commands</button>
+      <button mat-button class="example-icon" aria-label="Example Icon" (click)="navigate('live-notifications')">Notifications</button>
+    </mat-drawer>
+  </mat-drawer-container>
+}
